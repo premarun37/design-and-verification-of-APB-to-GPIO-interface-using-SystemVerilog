@@ -1,30 +1,18 @@
-\# Simulation Waveform
+# Waveform Output
 
+## Overview
+Contains waveform dump files from simulation.
 
+## Description
+Stores VCD (Value Change Dump) files generated during simulation.
 
-This folder contains waveform output (`.vcd`) used for timing analysis.
+## Files
+- `.vcd` waveform files
 
+## Usage
+- Open using tools like GTKWave
+- Analyze signal transitions and timing
 
-
-\## Observed Signals
-
-\- `PCLK`, `PSEL`, `PENABLE`, `PWRITE`
-
-\- `PADDR`, `PWDATA`, `PRDATA`
-
-\- GPIO internal signals
-
-
-
-\## Purpose
-
-Waveform validate:
-
-\- APB timing compliance
-
-\- Correct read/write sequencing
-
-\- Synchronization with clock
-
-
-
+## Purpose
+- Debug timing issues
+- Verify signal behavior
