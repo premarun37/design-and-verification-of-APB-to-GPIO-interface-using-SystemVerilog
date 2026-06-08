@@ -45,18 +45,18 @@ The verification environment is built using **object-oriented SystemVerilog** �
 │         │ event(done)              │ virtual if             │
 │         ▼                    ┌─────▼──────────────┐         │
 │   ┌───────────┐              │   apb_if (Interface)│        │
-│   │  Monitor  │◄─drv2mon─   │  PCLK, PRESETn      │        │
+│   │  Monitor  │◄─drv2mon─   │  PCLK, PRESETn      │         │
 │   │           │   mailbox   │  PADDR, PWDATA       │        │
 │   │ Observes  │             │  PRDATA, PSEL        │        │
 │   │ TXNs      │             │  PENABLE, PWRITE     │        │
 │   └───────────┘             └─────────┬────────────┘        │
 │                                       │                     │
 │                             ┌─────────▼──────────┐          │
-│                             │    DUT (design.sv)  │          │
-│                             │  GPIO Slave Module  │          │
-│                             │  gpio_out [7:0]     │          │
-│                             │  gpio_in  = 0xA5    │          │
-│                             └─────────────────────┘          │
+│                             │    DUT (design.sv) │          │
+│                             │  GPIO Slave Module │          │
+│                             │  gpio_out [7:0]    │          │
+│                             │  gpio_in  = 0xA5   │          │
+│                             └────────────────────┘          │
 └─────────────────────────────────────────────────────────────┘
 ```
 
