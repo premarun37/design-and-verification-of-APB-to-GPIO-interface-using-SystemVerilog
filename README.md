@@ -216,7 +216,7 @@ design-and-verification-of-APB-to-GPIO-interface-using-SystemVerilog/
 
 ## How to Run
 
-### Option 1: EDA Playground (Recommended — No install needed)
+### EDA Playground (No install needed)
 
 1. Go to [https://www.edaplayground.com](https://www.edaplayground.com)
 2. Select **Aldec Riviera-PRO** as the simulator
@@ -230,47 +230,6 @@ design-and-verification-of-APB-to-GPIO-interface-using-SystemVerilog/
    - `testbench.sv` (set as top-level)
 4. Set timescale to `1ns/1ns`
 5. Click **Run** — check console output and open EPWave for waveform
-
-### Option 2: Local Simulator (ModelSim / QuestaSim)
-
-```bash
-# From the Code/ directory, compile all files
-vlog -sv apb_if/apb_if.sv \
-        transaction/transaction.sv \
-        generator/generator.sv \
-        driver/driver.sv \
-        monitor/monitor.sv \
-        design/design.sv \
-        testbench/testbench.sv
-
-# Run simulation
-vsim -c tb -do "run -all; exit"
-
-# View waveform (if using ModelSim GUI)
-vsim tb
-add wave /*
-run -all
-```
-
-### Option 3: Icarus Verilog + GTKWave (Free & Open Source)
-
-```bash
-# Compile
-iverilog -g2012 -o apb_gpio \
-  Code/apb_if/apb_if.sv \
-  Code/transaction/transaction.sv \
-  Code/generator/generator.sv \
-  Code/driver/driver.sv \
-  Code/monitor/monitor.sv \
-  Code/design/design.sv \
-  Code/testbench/testbench.sv
-
-# Simulate (generates apb_gpio.vcd)
-vvp apb_gpio
-
-# View waveform
-gtkwave apb_gpio.vcd
-```
 
 ---
 
