@@ -1,10 +1,5 @@
 # Design and Verification of APB to GPIO Interface Using SystemVerilog
 
-![Language](https://img.shields.io/badge/Language-SystemVerilog-blue)
-![Simulator](https://img.shields.io/badge/Simulator-Aldec%20Riviera--PRO-green)
-![Platform](https://img.shields.io/badge/Platform-EDA%20Playground-orange)
-![Status](https://img.shields.io/badge/Simulation-Passing-brightgreen)
-
 ---
 
 ## Table of Contents
