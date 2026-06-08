@@ -66,13 +66,15 @@ The verification environment is built using **object-oriented SystemVerilog** �
 
 | Component | File | Role |
 |---|---|---|
-| Transaction | `transaction.sv` | Defines APB transfer object (addr, data, rw); constrained-random |
-| Generator | `generator.sv` | Creates 6 randomized transactions; triggers `done` event on finish |
-| Driver | `driver.sv` | Implements APB master — calls `apb_write()` / `apb_read()` via interface |
-| Monitor | `monitor.sv` | Passive observer; receives completed transactions via mailbox and logs them |
-| Interface | `apb_if.sv` | Encapsulates all APB signals; provides `apb_write()` and `apb_read()` tasks |
-| DUT | `design.sv` | 8-bit GPIO slave; latches write data into `gpio_out`; drives `gpio_in` on read |
-| Testbench | `testbench.sv` | Top-level; instantiates all components; runs Generator, Driver, Monitor in `fork...join_none` |
+| Transaction | [transaction.sv](Code/transaction/transaction.sv) | Defines APB transfer object (addr, data, rw); constrained-random |
+| Generator | [generator.sv](Code/generator/generator.sv) | Creates 6 randomized transactions; triggers `done` event on finish |
+| Driver | [driver.sv](Code/driver/driver.sv) | Implements APB master — calls `apb_write()` / `apb_read()` via interface |
+| Monitor | [monitor.sv](Code/monitor/monitor.sv) | Passive observer; receives completed transactions via mailbox and logs them |
+| Interface | [apb_if.sv](Code/apb_if/apb_if.sv) | Encapsulates all APB signals; provides `apb_write()` and `apb_read()` tasks |
+| DUT | [design.sv](Code/design/design.sv) | 8-bit GPIO slave; latches write data into `gpio_out`; drives `gpio_in` on read |
+| Testbench | [testbench.sv](Code/testbench/testbench.sv) | Top-level; instantiates all components; runs Generator, Driver, Monitor in `fork...join_none` |
+
+---
 
 ### Inter-Component Communication
 
@@ -248,4 +250,4 @@ design-and-verification-of-APB-to-GPIO-interface-using-SystemVerilog/
 
 ---
 
-*Simulated using Aldec Riviera-PRO on EDA Playground. Report available in the `Report/` folder.*
+*Simulated using Aldec Riviera-PRO on EDA Playground. Full project report available here → [APB-GPIO Project Report](Report/APB-GPIO%20Project%20Report.pdf)*
